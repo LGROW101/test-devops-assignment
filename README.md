@@ -1,3 +1,8 @@
+## Docker Images Build
+
+1.  `docker build -t locker01/go-app:latest .`
+2.  `docker push locker01/go-app:latest`
+
 **Candidate Assignment Instructions:**
 
 The sample application is developed using Go. Our development team would like to deliver this application to Production. As a DevOps engineer, you are responsible to complete the tasks by following these key areas: High Availability, Scalability, Security.
@@ -20,7 +25,7 @@ The sample application is developed using Go. Our development team would like to
 
 **Expected Output:** IaC code
 
-* Condition: Avoid injecting the generated GCP access keys to the application directly. **Expected Output:** Kustomize manifest, IaC code or anything to complete this task.
+- Condition: Avoid injecting the generated GCP access keys to the application directly. **Expected Output:** Kustomize manifest, IaC code or anything to complete this task.
 
 6. Use ArgoCD to deploy this application. To follow GitOps practices, we prefer to have an ArgoCD application defined declaratively in a YAML file if possible.
 

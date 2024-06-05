@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: devops-training
+spec:
+  selector:
+    matchLabels:
+      app: api
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: pun-api
+        image: ghcr.io/lgrow101/devops-go-example:943ed4853b9cebe2b659ee1452524e6136bbf27a
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: api.service.port
+
+              # test
